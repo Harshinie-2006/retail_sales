@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-paper: #F4F1EA;
+    --border-hairline: #DCD7CC;
+    --ink-primary: #191816;
+  }
+
+  body {
+    font-variant-numeric: tabular-nums lining-nums;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Editorial hairline rules */
+  hr {
+    border: none;
+    border-top: 1px solid theme('colors.paper.border');
+  }
+
+  /* Tabular headers */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    font-family: theme('fontFamily.mono');
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #DCD7CC;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #36322D;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B85D38;
+}
+
+/* High readability tabular values */
+.tabular-data {
+  font-family: theme('fontFamily.mono');
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle focus indicators */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #B85D38;
+}
